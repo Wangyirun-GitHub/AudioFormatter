@@ -1,0 +1,1 @@
+pyinstaller -F AudioFormatter.py -i ICON.ico

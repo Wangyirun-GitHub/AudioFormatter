@@ -1,0 +1,4 @@
+Sampling rate=44100
+Channel=1
+Bit rate=128k
+Output Format=.mp3
