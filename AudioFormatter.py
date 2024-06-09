@@ -15,7 +15,7 @@ Inputpath=current+"\\Input"
 Outputpath=current+"\\Output"
 Temppath=current+"\\Temp"
 parapath=current+"\\Parameters.txt"
-mpegpath=current+"\\Environment\"
+mpegpath=current+"\\Environment"
 ffmpegpath=current+"\\Environment\\ffmpeg.exe"
 print("FFMPEG Path:",ffmpegpath)
 os.system('path=%path%;'+ffmpegpath)
