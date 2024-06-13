@@ -1,5 +1,6 @@
-Code=UTF-8 Language=简体中文
-瑞安中学下课铃转码器 AudioFormatter
+Code=UTF-8  
+Language=简体中文  
+瑞安中学下课铃转码器 AudioFormatter  
 开发语言：Python    依赖：FFmpeg（AudioFormatter//Environment//ffmpeg.exe）
 开发者：浙江省瑞安中学 2303 王乙润（Peppa Wang）
 最新版本发行时间：2024年5月30日
