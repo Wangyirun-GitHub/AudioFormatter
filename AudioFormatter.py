@@ -1,9 +1,9 @@
 import os,shutil
 
-Version=1.2
+Version=1.3
 Developer="Peppa Wang"
 Programname="AudioFormatter"
-devdate="2024.5.30"
+devdate="2024.6.29"
 
 print("Welcome to use",Programname,"developed by",Developer,".")
 print("Version:",Version,"    Date:",devdate)
@@ -21,6 +21,13 @@ print("FFMPEG Path:",ffmpegpath)
 os.system('path=%path%;'+ffmpegpath)
 print("Input Folder Path:",Inputpath)
 print("Output Folder Path:",Outputpath)
+
+def get_folder_size(folder):
+    size=0
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            size+=os.path.getsize(os.path.join(root,file))
+    return round(size/1024,2)
 
 if os.path.exists(Inputpath)==0:
     os.mkdir(Inputpath)
@@ -69,7 +76,8 @@ while len(pendingmenu)==0:
     pendingmenu=os.listdir(Inputpath)
 
 pendingnumber=len(pendingmenu)
-print("Input Files:",pendingnumber,"files.")
+Inputsize=get_folder_size(Inputpath)
+print("Input Files:",pendingnumber,"files,",Inputsize,"KB.")
 
 data=["","","",""]
 Parameters=open(parapath)
@@ -112,7 +120,10 @@ print("")
 print("Done!")
 
 resultnumber=len(os.listdir(Outputpath))
-print("Output Files:",resultnumber,"files.")
+Outputsize=get_folder_size(Outputpath)
+sizechange=round(Outputsize/Inputsize*100,2)
+print("Output Files:",resultnumber,"files,",Outputsize,"KB.")
+print("Files Size Change:",sizechange,"%.")
 os.startfile(Outputpath)
 
 Tempdir=os.listdir(Temppath)
